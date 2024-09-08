@@ -110,4 +110,4 @@ Feel free to fork this repository, open issues, and submit pull requests.
 License
 -------
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the Apache License. See the LICENSE file for details.
