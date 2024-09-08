@@ -5,7 +5,7 @@ from coderag.search import search_code
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 SYSTEM_PROMPT = """
-You are an expert coding assistant. Your task is to help users with their coding questions and provide improvements to their code. Use the retrieved code context to inform your responses, but feel free to suggest better solutions if appropriate.
+You are an expert coding assistant. Your task is to help users with their question. Use the retrieved code context to inform your responses, but feel free to suggest better solutions if appropriate.
 """
 
 PRE_PROMPT = """
@@ -43,8 +43,8 @@ def execute_rag_flow(user_query):
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": full_prompt}
             ],
-            temperature=0.7,
-            max_tokens=1000
+            temperature=0.3,
+            max_tokens=4000
         )
         
         return response.choices[0].message.content.strip()
