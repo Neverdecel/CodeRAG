@@ -11,7 +11,7 @@ OPENAI_EMBEDDING_MODEL = os.getenv("OPENAI_EMBEDDING_MODEL", "text-embedding-ada
 OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "gpt-4")  # Default to GPT-4
 
 # Embedding dimension (from .env or fallback)
-EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", 1536))  # Ensure it's an integer
+EMBEDDING_DIM = int(os.getenv("EMBEDDING_DIM", 1536))  # Default to 1536 if not in .env
 
 # Project directory (from .env)
 WATCHED_DIR = os.getenv("WATCHED_DIR", os.path.join(os.getcwd(), 'CodeRAG'))

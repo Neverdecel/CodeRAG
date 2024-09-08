@@ -1,6 +1,14 @@
+Project Motivation
+==================
+
+This project came from a simple idea: what if you could provide an entire codebase to an LLM instead of just small pieces? 
+Most coding assistants, like co-pilots, work on a limited scope, but I wanted something that could handle the full context of a project.
+
+By integrating the full codebase with Retrieval-Augmented Generation (RAG), this POC aims to improve the quality and relevance of 
+code suggestions. The goal is to see how having the complete code available for real-time querying can enhance productivity.
+
 CodeRAG
 =======
-
 CodeRAG is an AI-powered code retrieval and augmentation tool that leverages OpenAI's models (such as ``gpt-4`` or ``gpt-3.5-turbo``) for real-time codebase querying, indexing, and improvement. This project integrates a Retrieval-Augmented Generation (RAG) system to help developers seamlessly search through code, receive suggestions, and implement improvements.
 
 Features
@@ -71,13 +79,21 @@ Create a ``.env`` file in the root of the project and add the following variable
 Step 4: Run the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once configured, you can run the application using:
+1. **Start the Backend**:
 
-.. code-block:: bash
+   To start the backend (indexing, embeddings, and monitoring):
 
-   python main.py
+   .. code-block:: bash
 
-This will launch the application where you can interact with the conversational AI and retrieve code suggestions based on your queries.
+      python main.py
+
+2. **Start the Frontend**:
+
+   To launch the Streamlit UI:
+
+   .. code-block:: bash
+
+      streamlit run app.py
 
 Usage
 -----

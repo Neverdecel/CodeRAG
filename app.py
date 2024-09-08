@@ -1,12 +1,12 @@
 import streamlit as st
 from openai import OpenAI
 from coderag.config import OPENAI_API_KEY, OPENAI_CHAT_MODEL
-from prompt_flow import execute_prompt_flow
+from prompt_flow import execute_rag_flow
 
 # Initialize the OpenAI client
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-st.title("Code RAG with OpenAI")
+st.title("CodeRAG: Your Coding Assistant")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -18,7 +18,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Chat input
-if prompt := st.chat_input("Ask about the codebase"):
+if prompt := st.chat_input("What is your coding question?"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
@@ -28,11 +28,11 @@ if prompt := st.chat_input("Ask about the codebase"):
         full_response = ""
 
         try:
-            response = execute_prompt_flow(prompt, project_path=".")  # Specify your project path here
+            response = execute_rag_flow(prompt)
             message_placeholder.markdown(response)
             full_response = response
         except Exception as e:
-            error_message = f"Error with chat completion: {str(e)}"
+            error_message = f"Error in RAG flow execution: {str(e)}"
             st.error(error_message)
             full_response = error_message
 
