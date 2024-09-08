@@ -36,7 +36,7 @@ Prerequisites
 
 - **Python 3.8+**
 - **OpenAI API Key** (You can get one `here <https://beta.openai.com/signup/>`_)
-- **FAISS** (optional, depending on your choice of vector database)
+- **FAISS**
 
 Step 1: Clone the Repository
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
