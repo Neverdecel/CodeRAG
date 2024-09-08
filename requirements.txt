@@ -1,0 +1,6 @@
+faiss-cpu
+watchdog
+transformers
+torch
+flask
+python-dotenv

@@ -1,0 +1,29 @@
+# Ignore Python bytecode and cache
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment directories
+.venv/
+env/
+venv/
+
+# Ignore environment variables file
+.env
+
+# Ignore node_modules
+node_modules/
+
+# Ignore FAISS index file
+*.faiss
+
+# Ignore Git directory
+.git/
+
+# Ignore Streamlit temporary files
+.streamlit/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+plan.md
+metadata.npy
